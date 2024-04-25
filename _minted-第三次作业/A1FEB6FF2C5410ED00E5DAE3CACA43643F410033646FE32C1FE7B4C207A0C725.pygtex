@@ -1,0 +1,84 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nb}{clearvars}
+\PYG{p}{[}\PYG{n}{t1}\PYG{p}{,}\PYG{n}{c1}\PYG{p}{]}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{showChange}\PYG{p}{(}\PYG{l+m+mi}{5}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{l+m+mf}{0.2}\PYG{p}{,}\PYG{l+m+mi}{7}\PYG{p}{);}
+\PYG{p}{[}\PYG{n}{t2}\PYG{p}{,}\PYG{n}{c2}\PYG{p}{]}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{showChange}\PYG{p}{(}\PYG{l+m+mi}{5}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{l+m+mf}{0.5}\PYG{p}{,}\PYG{l+m+mi}{7}\PYG{p}{);}
+\PYG{p}{[}\PYG{n}{t3}\PYG{p}{,}\PYG{n}{c3}\PYG{p}{]}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{showChange}\PYG{p}{(}\PYG{l+m+mi}{5}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{l+m+mf}{1.5}\PYG{p}{,}\PYG{l+m+mi}{7}\PYG{p}{);}
+
+\PYG{c}{\PYGZpc{} 绘制不同k取值的图}
+\PYG{n}{f1}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{figure}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{);}
+\PYG{n+nb}{plot}\PYG{p}{([}\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{n}{t1}\PYG{p}{],[}\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{n}{c1}\PYG{p}{],}\PYG{n}{LineWidth}\PYG{p}{=}\PYG{l+m+mf}{1.5}\PYG{p}{)}
+\PYG{n+nb}{hold}\PYG{+w}{ }\PYG{n}{on}
+\PYG{n+nb}{plot}\PYG{p}{([}\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{n}{t2}\PYG{p}{],[}\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{n}{c2}\PYG{p}{],}\PYG{n}{LineWidth}\PYG{p}{=}\PYG{l+m+mf}{1.5}\PYG{p}{)}
+\PYG{n+nb}{plot}\PYG{p}{([}\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{n}{t3}\PYG{p}{],[}\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{n}{c3}\PYG{p}{],}\PYG{n}{LineWidth}\PYG{p}{=}\PYG{l+m+mf}{1.5}\PYG{p}{)}
+\PYG{n+nb}{xlabel}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}t\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nb}{ylabel}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}C(t)\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nb}{legend}\PYG{p}{([}\PYG{l+s}{\PYGZdq{}k = 0.2\PYGZdq{}}\PYG{p}{,}\PYG{l+s}{\PYGZdq{}k = 0.5\PYGZdq{}}\PYG{p}{,}\PYG{l+s}{\PYGZdq{}k = 1.5\PYGZdq{}}\PYG{p}{],}\PYG{n}{Location}\PYG{p}{=}\PYG{l+s}{\PYGZdq{}northwest\PYGZdq{}}\PYG{p}{)}
+
+\PYG{c}{\PYGZpc{} 绘制上限与下限}
+\PYG{n}{f2}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{figure}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{p}{);}
+\PYG{n}{t1}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{n}{t1}\PYG{p}{];}\PYG{+w}{ }\PYG{n}{tmin}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{t1}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{l+m+mi}{100}\PYG{p}{:}\PYG{l+m+mi}{701}\PYG{p}{);}\PYG{+w}{ }\PYG{n}{tmax}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{t1}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{p}{:}\PYG{l+m+mi}{100}\PYG{p}{:}\PYG{l+m+mi}{701}\PYG{p}{);}
+\PYG{n}{c1}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{n}{c1}\PYG{p}{];}\PYG{+w}{ }\PYG{n}{cmin}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{c1}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{l+m+mi}{100}\PYG{p}{:}\PYG{l+m+mi}{701}\PYG{p}{);}\PYG{+w}{ }\PYG{n}{cmax}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{c1}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{p}{:}\PYG{l+m+mi}{100}\PYG{p}{:}\PYG{l+m+mi}{701}\PYG{p}{);}
+\PYG{n}{fitModel}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{fittype}\PYG{p}{(@(}\PYG{n}{a}\PYG{p}{,}\PYG{n}{b}\PYG{p}{,}\PYG{n}{c}\PYG{p}{,}\PYG{n}{x}\PYG{p}{)}\PYG{n}{a}\PYG{o}{.*}\PYG{n+nb}{exp}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{b}\PYG{o}{.*}\PYG{n}{x}\PYG{p}{)}\PYG{o}{+}\PYG{n}{c}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{...}
+\PYG{+w}{    }\PYG{l+s}{\PYGZsq{}independent\PYGZsq{}}\PYG{p}{,\PYGZob{}}\PYG{l+s}{\PYGZsq{}x\PYGZsq{}}\PYG{p}{\PYGZcb{},}\PYG{l+s}{\PYGZsq{}coefficients\PYGZsq{}}\PYG{p}{,\PYGZob{}}\PYG{l+s}{\PYGZsq{}a\PYGZsq{}}\PYG{p}{,}\PYG{l+s}{\PYGZsq{}b\PYGZsq{}}\PYG{p}{,}\PYG{l+s}{\PYGZsq{}c\PYGZsq{}}\PYG{p}{\PYGZcb{});}
+\PYG{n}{fmax}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{fit}\PYG{p}{(}\PYG{n}{tmax}\PYG{p}{,}\PYG{n}{cmax}\PYG{p}{,}\PYG{n}{fitModel}\PYG{p}{,}\PYG{l+s}{\PYGZsq{}StartPoint\PYGZsq{}}\PYG{p}{,[}\PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{0.4}\PYG{p}{,}\PYG{l+m+mf}{0.2}\PYG{p}{,}\PYG{l+m+mi}{3}\PYG{p}{]);}
+\PYG{n}{fmin}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{fit}\PYG{p}{(}\PYG{n}{tmin}\PYG{p}{,}\PYG{n}{cmin}\PYG{p}{,}\PYG{n}{fitModel}\PYG{p}{,}\PYG{l+s}{\PYGZsq{}StartPoint\PYGZsq{}}\PYG{p}{,[}\PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{0.4}\PYG{p}{,}\PYG{l+m+mf}{0.2}\PYG{p}{,}\PYG{l+m+mi}{3}\PYG{p}{]);}
+\PYG{n+nb}{plot}\PYG{p}{(}\PYG{n}{t1}\PYG{p}{,}\PYG{n}{c1}\PYG{p}{,}\PYG{n}{LineWidth}\PYG{p}{=}\PYG{l+m+mf}{1.5}\PYG{p}{)}
+\PYG{n+nb}{hold}\PYG{+w}{ }\PYG{n}{on}
+\PYG{n+nb}{plot}\PYG{p}{(}\PYG{n}{t1}\PYG{p}{,}\PYG{n}{fmax}\PYG{p}{(}\PYG{n}{t1}\PYG{p}{),}\PYG{n}{LineWidth}\PYG{p}{=}\PYG{l+m+mf}{1.5}\PYG{p}{)}
+\PYG{n+nb}{plot}\PYG{p}{(}\PYG{n}{t1}\PYG{p}{,}\PYG{n}{fmin}\PYG{p}{(}\PYG{n}{t1}\PYG{p}{),}\PYG{n}{LineWidth}\PYG{p}{=}\PYG{l+m+mf}{1.5}\PYG{p}{)}
+\PYG{n+nb}{plot}\PYG{p}{(}\PYG{n}{tmin}\PYG{p}{,}\PYG{n}{cmin}\PYG{p}{,}\PYG{l+s}{\PYGZsq{}ko\PYGZsq{}}\PYG{p}{,}\PYG{n}{LineWidth}\PYG{p}{=}\PYG{l+m+mi}{1}\PYG{p}{)}
+\PYG{n+nb}{plot}\PYG{p}{(}\PYG{n}{tmax}\PYG{p}{,}\PYG{n}{cmax}\PYG{p}{,}\PYG{l+s}{\PYGZsq{}k\PYGZca{}\PYGZsq{}}\PYG{p}{,}\PYG{n}{LineWidth}\PYG{p}{=}\PYG{l+m+mi}{1}\PYG{p}{)}
+\PYG{n+nb}{xlabel}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}t\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nb}{ylabel}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}C(t)\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nb}{axis}\PYG{p}{([}\PYG{l+m+mi}{0}\PYG{+w}{ }\PYG{l+m+mi}{35}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{+w}{ }\PYG{l+m+mf}{3.5}\PYG{p}{])}
+
+\PYG{c}{\PYGZpc{} 计算合理区域}
+\PYG{n}{Cmax}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m+mi}{4}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{Cmin}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{K}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m+mf}{0.2}\PYG{p}{;}
+\PYG{n}{X}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{zeros}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{l+m+mi}{200}\PYG{p}{);}
+\PYG{n}{X}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{l+m+mi}{100}\PYG{p}{)}\PYG{+w}{   }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{linspace}\PYG{p}{(}\PYG{n}{Cmin}\PYG{o}{/}\PYG{n}{Cmax}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{l+m+mi}{100}\PYG{p}{);}
+\PYG{n}{X}\PYG{p}{(}\PYG{l+m+mi}{101}\PYG{p}{:}\PYG{l+m+mi}{200}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{linspace}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{n}{Cmin}\PYG{o}{/}\PYG{n}{Cmax}\PYG{p}{,}\PYG{l+m+mi}{100}\PYG{p}{);}
+\PYG{n}{Y}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{zeros}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{l+m+mi}{200}\PYG{p}{);}
+\PYG{n}{Y}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{l+m+mi}{100}\PYG{p}{)}\PYG{+w}{   }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{Cmin}\PYG{+w}{ }\PYG{o}{.*}\PYG{+w}{ }\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{X}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{l+m+mi}{100}\PYG{p}{))}\PYG{+w}{ }\PYG{o}{./}\PYG{+w}{ }\PYG{n}{X}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{l+m+mi}{100}\PYG{p}{);}
+\PYG{n}{Y}\PYG{p}{(}\PYG{l+m+mi}{101}\PYG{p}{:}\PYG{l+m+mi}{200}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{Cmax}\PYG{+w}{ }\PYG{o}{.*}\PYG{+w}{ }\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{X}\PYG{p}{(}\PYG{l+m+mi}{101}\PYG{p}{:}\PYG{l+m+mi}{200}\PYG{p}{));}
+\PYG{n}{T}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n+nb}{log}\PYG{p}{(}\PYG{n}{X}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{./}\PYG{+w}{ }\PYG{n}{K}\PYG{p}{;}
+
+\PYG{n}{warnState}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{warning}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}off\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}all\PYGZsq{}}\PYG{p}{);}
+\PYG{c}{\PYGZpc{} 绘制合理区域}
+\PYG{n}{f3}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{figure}\PYG{p}{(}\PYG{l+m+mi}{3}\PYG{p}{);}
+\PYG{n}{pgon}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{polyshape}\PYG{p}{(}\PYG{n}{X}\PYG{p}{,}\PYG{n}{Y}\PYG{p}{,}\PYG{l+s}{\PYGZsq{}Simplify\PYGZsq{}}\PYG{p}{,}\PYG{n+nb}{true}\PYG{p}{);}
+\PYG{n+nb}{plot}\PYG{p}{(}\PYG{n}{pgon}\PYG{p}{,}\PYG{n}{FaceColor}\PYG{p}{=}\PYG{l+s}{\PYGZsq{}red\PYGZsq{}}\PYG{p}{,}\PYG{n}{FaceAlpha}\PYG{p}{=}\PYG{l+m+mf}{0.1}\PYG{p}{,}\PYG{n}{LineWidth}\PYG{p}{=}\PYG{l+m+mf}{1.5}\PYG{p}{,}\PYG{n}{EdgeColor}\PYG{p}{=}\PYG{l+s}{\PYGZsq{}red\PYGZsq{}}\PYG{p}{)}
+\PYG{n+nb}{xlabel}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}e\PYGZca{}\PYGZob{}\PYGZhy{}kT\PYGZcb{}\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nb}{ylabel}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}A\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nb}{axis}\PYG{p}{([}\PYG{l+m+mf}{0.25}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{+w}{ }\PYG{l+m+mi}{3}\PYG{p}{])}
+\PYG{n+nb}{box}\PYG{+w}{ }\PYG{n}{on}
+\PYG{c}{\PYGZpc{}绘制合理区域2}
+\PYG{n}{f4}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{figure}\PYG{p}{(}\PYG{l+m+mi}{4}\PYG{p}{);}
+\PYG{n}{pgon}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{polyshape}\PYG{p}{(}\PYG{n}{T}\PYG{p}{,}\PYG{n}{Y}\PYG{p}{,}\PYG{l+s}{\PYGZsq{}Simplify\PYGZsq{}}\PYG{p}{,}\PYG{n+nb}{true}\PYG{p}{);}
+\PYG{n+nb}{plot}\PYG{p}{(}\PYG{n}{pgon}\PYG{p}{,}\PYG{n}{FaceColor}\PYG{p}{=}\PYG{l+s}{\PYGZsq{}red\PYGZsq{}}\PYG{p}{,}\PYG{n}{FaceAlpha}\PYG{p}{=}\PYG{l+m+mf}{0.1}\PYG{p}{,}\PYG{n}{LineWidth}\PYG{p}{=}\PYG{l+m+mf}{1.5}\PYG{p}{,}\PYG{n}{EdgeColor}\PYG{p}{=}\PYG{l+s}{\PYGZsq{}red\PYGZsq{}}\PYG{p}{)}
+\PYG{n+nb}{xlabel}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}T\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nb}{ylabel}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}A\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nb}{axis}\PYG{p}{([}\PYG{l+m+mi}{0}\PYG{+w}{ }\PYG{l+m+mi}{7}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{+w}{ }\PYG{l+m+mi}{3}\PYG{p}{])}
+\PYG{n+nb}{box}\PYG{+w}{ }\PYG{n}{on}
+\PYG{n+nb}{warning}\PYG{p}{(}\PYG{n}{warnState}\PYG{p}{);}
+
+\PYG{c}{\PYGZpc{} 辅助函数}
+\PYG{k}{function}\PYG{+w}{ }[t,Ct]\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nf}{showChange}\PYG{p}{(}T, A, k1, n\PYG{p}{)}
+\PYG{+w}{    }\PYG{n}{syms}\PYG{+w}{ }\PYG{n}{t0}\PYG{+w}{ }\PYG{n}{C0}\PYG{+w}{ }\PYG{n}{C}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}\PYG{+w}{ }\PYG{n}{x}\PYG{+w}{ }\PYG{n}{k}
+\PYG{+w}{    }\PYG{n}{s}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{dsolve}\PYG{p}{(}\PYG{n+nb}{diff}\PYG{p}{(}\PYG{n}{C}\PYG{p}{,}\PYG{n}{x}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{n}{k}\PYG{o}{*}\PYG{n}{C}\PYG{p}{(}\PYG{n}{x}\PYG{p}{),}\PYG{+w}{ }\PYG{n}{C}\PYG{p}{(}\PYG{n}{t0}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{n}{C0}\PYG{p}{);}
+
+\PYG{+w}{    }\PYG{n}{npoints}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m+mi}{100}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{Ct}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{zeros}\PYG{p}{(}\PYG{n}{npoints}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{n}{n}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{);}
+\PYG{+w}{    }\PYG{n}{t}\PYG{+w}{  }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{zeros}\PYG{p}{(}\PYG{n}{npoints}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{n}{n}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{);}
+
+\PYG{+w}{    }\PYG{n}{c}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k}{for}\PYG{+w}{ }\PYG{n+nb}{i}\PYG{p}{=}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{n}{n}
+\PYG{+w}{        }\PYG{n}{t}\PYG{p}{(}\PYG{n}{npoints}\PYG{o}{*}\PYG{p}{(}\PYG{n+nb}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{n}{npoints}\PYG{o}{*}\PYG{n+nb}{i}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{linspace}\PYG{p}{((}\PYG{n+nb}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{o}{*}\PYG{n}{T}\PYG{p}{,}\PYG{n+nb}{i}\PYG{o}{*}\PYG{n}{T}\PYG{p}{).}\PYG{o}{\PYGZsq{}}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{c}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{c}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{n}{A}\PYG{p}{;}
+
+\PYG{+w}{        }\PYG{n}{s\PYGZus{}sub}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{subs}\PYG{p}{(}\PYG{n}{s}\PYG{p}{,[}\PYG{n}{t0}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{C0}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{k}\PYG{p}{],}\PYG{+w}{ }\PYG{p}{[(}\PYG{n+nb}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{o}{*}\PYG{n}{T}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{c}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{k1}\PYG{p}{]);}
+\PYG{+w}{        }\PYG{n}{s\PYGZus{}func}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{matlabFunction}\PYG{p}{(}\PYG{n}{s\PYGZus{}sub}\PYG{p}{);}
+\PYG{+w}{        }\PYG{n}{Ct}\PYG{p}{(}\PYG{n}{npoints}\PYG{o}{*}\PYG{p}{(}\PYG{n+nb}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{n}{npoints}\PYG{o}{*}\PYG{n+nb}{i}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{s\PYGZus{}func}\PYG{p}{(}\PYG{n}{t}\PYG{p}{(}\PYG{n}{npoints}\PYG{o}{*}\PYG{p}{(}\PYG{n+nb}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{n}{npoints}\PYG{o}{*}\PYG{n+nb}{i}\PYG{p}{));}
+\PYG{+w}{        }\PYG{n}{c}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{Ct}\PYG{p}{(}\PYG{n}{npoints}\PYG{o}{*}\PYG{n+nb}{i}\PYG{p}{);}
+\PYG{+w}{    }\PYG{k}{end}
+\PYG{k}{end}
+\end{Verbatim}
